@@ -1,0 +1,26 @@
+{{ define "head" }}
+<title>{{ $.Site.Title }} -- Tag: {{ .Title }}</title>
+{{ end }}
+{{ define "hero" }}
+<section class="hero is-info" id="hero">
+    <div class="hero-body">
+        <div class="container">
+        <h1 class="title is-text-centered is-size-1-desktop">
+            Tag: {{ .Title }}
+        </h1>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ define "main" }}
+<div id="main-section" class="column is-three-quarters">
+    <article class="content columns is-multiline">
+    {{  range .Paginator.Pages  }}
+    {{ partial "half-col-article-summary.html" . }}
+    {{ end }}
+    </article>
+           
+    {{ partial "my-paginator.html" . }}
+
+</div>
+{{ end }}

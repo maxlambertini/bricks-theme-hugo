@@ -1,0 +1,86 @@
+HTML {
+    height: 100%;
+  }
+  
+  BODY,P,DIV,UL LI, OL LI, TD {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 12pt;
+  }
+  
+  H1,H2,H3,H4,TH {    
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 700;
+  }
+  
+  H1,H2 {
+    font-style: italic;
+    font-weight: 900;
+  }
+  
+  SECTION {
+    width:100%; 
+    float:left;
+    H1 { font-size: 2.6em; }
+    H2 { font-size: 2.2em; text-align: center; }
+    H3 { font-size: 1.6em; }
+    H4 { font-size: 1.35em; }
+  }
+
+  
+  SECTION#hero {
+      font-size: 1.5em;
+      H1 {
+          text-align: center;
+          margin-top: 1em;
+          margin-bottom: 0.5em;
+          font-size: 2.6em; 
+      }
+      H3 {
+          text-align: center;
+          font-size: 1.5em;
+          margin: 0.5em auto;
+      }
+      P {
+          font-size: 1em; 
+          font-family: 'Libre Franklin', sans-serif;
+          text-align: center;
+        }
+  }
+
+  div.work-experience {
+      width:100%;
+      float:left;
+      H3 {
+          width: 100%; float:left;
+          margin: 0.6em 0;
+      }
+      .exp-info {
+          width:33%; 
+          float:right;
+      }
+      .experience-content {
+          width:65%;
+          float:left;
+          P {
+              text-align: justify;
+              hyphens: auto;
+              -moz-hyphens: auto;
+              -webkit-hyphens: auto;
+              -ms-hyphens: auto;
+          }
+      }
+      .tech {
+          float:left;
+          width:100%;
+          margin-top: 1em;
+          UL {
+              display:inline-block;
+              margin: 0;
+              padding: 0;
+              LI {
+                  display:inline-block;
+                  margin-right: 2pt;
+              }
+          }
+      }
+  }

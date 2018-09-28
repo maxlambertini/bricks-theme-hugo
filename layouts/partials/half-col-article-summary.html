@@ -1,0 +1,7 @@
+<div class="column is-half-desktop">
+    <div class="date has-background-white-ter has-text-right content">{{ .Date.Format "02-01-2006" }}</div>
+    <h2 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <div class="is-size-5-desktop">
+        {{ .Params.summary | markdownify }} | <a class="has-text-bold" href="{{ .Permalink }}">Leggi tutto...</a>
+    </div>
+</div>

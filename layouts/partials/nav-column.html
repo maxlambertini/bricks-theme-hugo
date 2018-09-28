@@ -1,0 +1,14 @@
+<div class="is-one-quarter column">
+        <nav class="content">
+            <h3 class="title">Links</h3>
+            <ul>
+                {{ range .Site.Data.links.list }}
+                    <li><a href="{{ .value }}" target="_new">{{ .label }}</a></li>
+                {{ end }}
+            </ul>
+            <h4 class="subtitle">(C) Notices</h4>
+            <p class="is-size-7">
+                    LEGO, the LEGO logo, the Minifigure, and the Brick and Knob configurations are trademarks of the LEGO Group of Companies. ©2015. 
+            </p>
+        </nav>
+    </div>

@@ -1,0 +1,51 @@
+<footer class="has-background-link has-text-white">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-quarter">
+                        <h3 class="subtitle has-text-white has-text-weight-bold">Categories</h3>
+                        <nav id="categories" class="tags">
+                            {{ $tags := $.Site.Taxonomies.categories.ByCount }}
+                            {{ range $tags }}
+                            {{ if .Term }}
+                            {{ $tagURL := printf "categories/%s.html" .Term | relURL }}
+                            <span class="tag "><a href="{{ $tagURL }}" >{{ .Term }} ({{ .Count }})</a></span>
+                            {{ end }}
+                            {{ end }}                        
+                        </nav>
+
+                </div>
+                <div class="column is-two-quarters">
+                        <h3 class="subtitle has-text-white has-text-weight-bold">Tags</h3>
+                        <nav id="categories" class="tags">
+                            <ul>
+                            {{ $tags := $.Site.Taxonomies.tags.ByCount }}
+                            {{ range $tags }}
+                            {{ if .Term }}
+                            {{ $tagURL := printf "tags/%s.html" .Term | relURL }}
+                            <span class="tag "><a href="{{ $tagURL }}" >{{ .Term }} ({{ .Count }})</a></span>
+                            {{ end }}
+                            {{ end }}                        
+                            </ul>
+                        </nav>
+                
+                </div>
+                <div class="column is-one-quarter">
+                    <h3 class="subtitle has-text-white has-text-weight-bold">Stuff and Credits</h3>
+                    <p>
+                        Proudly powered by <a class=" has-text-warning" href="https://gohugo.io" target="_new">Hugo</a>. 
+                    </p>
+                    <p>
+                        Laid out using the nifty <a class=" has-text-warning"  href="https://bulma.io" target="_new">Bulma Framework</a>. 
+                    </p>
+                    <p>
+                            This site is typeset using the blocky -- but quite good-looking indeed -- 
+                            <a class="has-text-warning" target="_new" href="https://www.google.com/fonts/specimen/Exo%202">Exo 2 fonts</a>, which comes in a lot of weight and styles.
+
+                            Enjoy! 
+                    </p>
+                </div>                    
+            </div>
+        </div>
+    </section>
+</footer>

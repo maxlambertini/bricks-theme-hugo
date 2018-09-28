@@ -1,0 +1,32 @@
+{{ define "head" }}
+<title>{{ $.Site.Title }} -- {{ .Title }}</title>
+
+<meta name="description" value='{{ .Params.summary |    plainify}} ' />
+{{ end }}
+
+{{ define "hero" }}
+<section class="hero is-info is-medium" id="hero">
+    <div class="hero-body">
+        <div class="container">
+        <h1 class="title is-size-1-desktop is-text-centered">
+            {{ .Title }}
+        </h1>
+        </div>
+    </div>
+</section>
+
+{{ end }}
+{{ define "main" }}
+<div id="main-section" class="column is-three-quarters">
+    <article class="content">
+
+
+    <div class="intro">
+        {{ .Params.summary | markdownify}}
+    </div> 
+    <div class="main-content"> 
+        {{ .Content }}
+    </div>
+    </article>
+</div>
+{{ end }}

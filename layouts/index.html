@@ -1,0 +1,31 @@
+{{ define "hero" }}
+<section class="hero is-info is-medium" id="hero">
+    <div class="hero-body">
+        <div class="container">
+        <h1 class="title is-text-centered is-size-1">
+            {{ .Site.Title}}
+        </h1>
+        <h3 class="is-size-3">{{ .Site.Params.subtitle }}</h3>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ define "main" }}
+<div id="main-section" class="column is-three-quarters">
+        <div class="columns is-multiline">
+            {{ $paginator := .Paginator }}
+            {{ range $index, $value := .Paginator.Pages }}
+            {{ if not $paginator.HasPrev }}
+                {{ if lt $index  2 }}
+                    {{ partial "full-col-article-summary.html" $value }}
+                {{ else }}
+                    {{ partial "half-col-article-summary.html" $value }}
+                {{ end }}
+            {{ else }}
+                {{ partial "half-col-article-summary.html" $value }}
+            {{ end }}
+            {{ end }}
+        </div>
+        {{ partial "my-paginator.html" . }}
+</div>
+{{ end }}

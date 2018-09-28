@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ block "head" .}}
+        <title>{{ $.Site.Title }}</title>
+        {{ end }}
+        {{ $style := resources.Get "bulma.scss"   }} 
+        {{ $2 := $style | resources.ToCSS}}
+        <link rel="stylesheet" href="{{ $2.Permalink }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+    <body>
+        <nav class="navbar is-fixed-top has-background-link" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <!-- navbar items, navbar burger... -->
+                <a class="navbar-item  has-text-white has-text-weight-bold is-size-5" href="/">Home</a>
+                <a class="navbar-item  has-text-white has-text-weight-bold is-size-5" href="/info/istruzioni.html">Istruzioni</a>
+
+                <a role="button" class="navbar-burger has-text-white has-text-bold" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>                
+
+            </div>
+        </nav>
+        {{ block "hero" . }}
+        {{ end }}
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    {{ block "main" . }}
+                    <!-- here goes main -->
+                    {{ end }}
+                    {{ partial "nav-column.html" .}}
+                </div>
+            </div>
+        </section>
+        {{ partial "main-footer.html" . }}
+    </body>
+</html>
